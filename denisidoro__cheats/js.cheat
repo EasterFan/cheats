@@ -1,0 +1,44 @@
+% npm
+
+# initial new package
+npm init
+
+# initial immediately a new package
+npm init -y
+
+# install all dependencies packages
+npm install
+
+# install all dev dependencies packages
+npm install --save-dev
+
+# install a specified package
+npm install <package_name>
+
+# install a specified dev package
+npm install <package_name> --save-dev
+
+# install globally a specified package
+npm install <package_name> -g
+
+
+
+% nvm
+
+# 查看远程可用 node 版本
+nvm ls-remote
+
+# 安装node版本并设为默认node
+nvm install 8.10.0 && nvm alias default 8.10.0
+
+# 检验
+node --version && npm -v
+
+# 查看已安装的node
+nvm ls
+
+# 切换 node 版本
+nvm use 8.10.0
+
+# 卸载node
+nvm uninstall 8.10.0

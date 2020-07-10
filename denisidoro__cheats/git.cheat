@@ -1,0 +1,13 @@
+% git
+
+# 设置命令
+git config --global user.name easterfan
+
+# 设置邮箱
+git config --global user.email easterfan@gmail.com
+
+# 初始化 git 仓库
+git init
+
+# 查看远程命令
+git remote --verbose

@@ -1,0 +1,25 @@
+% vagrant
+
+# 初始化虚拟机 - https://vagrantcloud.com
+vagrant init centos/7
+
+# 启动环境
+vagrant up
+
+# 进入系统镜像
+vagrant ssh
+
+# 挂起虚拟机
+vagrant suspend
+
+# 恢复被挂起的虚拟机
+vagrant resume
+
+# 强制关机
+vagrant halt
+
+# 获取虚拟机状态
+vagrant status
+
+# 销毁虚拟机
+vagrant destroy
