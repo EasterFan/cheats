@@ -1,0 +1,7 @@
+% ssh
+
+# 查看 ssh 服务是否启动
+ netstat -anp | grep :22
+
+# 启动 ssh 服务
+service sshd start

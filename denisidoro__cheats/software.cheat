@@ -11,3 +11,6 @@ navi repo browse
 navi repo add https://github.com/denisidoro/cheats
 
 ## autojump 配置
+
+## 生成 ssh-keygen
+ssh-keygen -t rsa -C "xxxx@gmail.com" -f ~/.ssh/test_github
