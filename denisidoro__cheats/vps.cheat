@@ -5,3 +5,17 @@
 
 # 启动 ssh 服务
 service sshd start
+
+# 查看防火墙
+service iptables status
+
+# 关闭防火墙
+service iptables stop
+
+# 查看使用空间
+df -hl
+
+# 清理 vps
+
+# 查看占用 8080 端口的进程
+netstat -nlp | grep :8080
