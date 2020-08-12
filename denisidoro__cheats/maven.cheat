@@ -1,0 +1,16 @@
+% mvn
+
+# 安装jar包到本地仓库 -- 供其它项目使用
+mvn install
+
+# 清除target
+mvn clean
+
+# 编译
+mvn compile
+
+# 打包
+mvn package -X
+
+# 跳过单元测试 -- 一些单元测试要用到数据库中的数据,如果数据库还没有生成这些数据,就会报错
+mvn clean package -D maven.test.skip=true
