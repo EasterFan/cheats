@@ -19,3 +19,6 @@ df -hl
 
 # 查看占用 8080 端口的进程
 netstat -nlp | grep :8080
+
+# 查看占用 8080 端口的进程并杀死
+kill -9 $(netstat -nlp | grep :8080 | awk \'{print $7}\' | awk -F"/" \'{ print $1 }\')

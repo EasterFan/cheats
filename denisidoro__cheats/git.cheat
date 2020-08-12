@@ -1,9 +1,9 @@
 % git
 
-# 设置命令
+# 设置全局用户名
 git config --global user.name easterfan
 
-# 设置邮箱
+# 设置全局邮箱
 git config --global user.email easterfan@gmail.com
 
 # 初始化 git 仓库
@@ -11,3 +11,9 @@ git init
 
 # 查看远程命令
 git remote --verbose
+
+# 在单独项目中设置对应的用户名 - 4步走
+cd {repo}/.git
+&& git config user.name "EasterFan"
+&& git config user.email "xxxx@gmail.com"
+&& cat config
