@@ -14,3 +14,12 @@ mvn package -X
 
 # 跳过单元测试 -- 一些单元测试要用到数据库中的数据,如果数据库还没有生成这些数据,就会报错
 mvn clean package -D maven.test.skip=true
+
+# maven依赖树
+mvn dependency:tree -Dverbose
+
+
+% java
+
+# 后台启动 java 并指定端口
+nohup java -jar jenkins.war --httpPort=9090  &
