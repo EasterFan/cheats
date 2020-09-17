@@ -1,19 +1,90 @@
 % docker
 
-# Remove an image
-docker image rm <image_id>
+# 快速安装 docker
+curl -sSL https://get.docker.com/ | sh
 
-# Delete an image from the local image store
-docker rmi <image_id>
 
-# List all images that are locally stored with the Docker engine
+# 下载镜像
+docker pull mysql:5.7
+
+# 查看本地镜像
 docker images
 
-# Build an image from the Dockerfile in the current directory and tag the image
-docker build -t <image>:<version> .
+# 查看镜像详细信息
+docker inspect mysql:5.7
 
-# Pull an image from a registry
-docker pull <image>:<version>
+# 查看镜像每一层提交信息
+docker history mysql:5.7
+
+# 给镜像打 tag
+docker tag mysql:5.7 easter-start-mysql:5.7
+
+# 搜索镜像
+docker search mysql
+
+# 删除【部分】通过标签删除镜像
+docker rmi mysql:5.7
+
+# 删除【彻底】先删除镜像标签，再删除镜像本身
+docker rmi ee7cbd482336
+
+# 删除【删除所有不使用的镜像】
+docker image prune -f -a
+
+# dockerfile 创建镜像
+docker build -t jpressfdf:latest .
+
+# 基于container 创建镜像（不推荐，看不到构建过程，不安全）
+docker commit [container_name] [new image_name]
+
+# 导出镜像
+docker save -o easter-start-mysql.tar  easter-start-mysql:5.7
+
+# 加载镜像
+docker  load -i easter-start-mysql.tar
+
+# 上传镜像到 dockerhub(不推荐)
+docker login &&
+docker tag easter-start-mysql:5.7 easterfan/puti &&
+docker push easterfan/puti:latest
+
+# 启动容器
+docker run -d --name=test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=halo mysql:5.7
+
+# 查看正在运行的容器
+docker ps -a
+
+# 查看容器详细信息
+docker inspect containerID
+
+# 查看容器日志
+docker logs containerID
+
+# 进入容器
+docker exec -it [containID] /bin/bash ||
+docker exec -it zfaka_nginx_1 /bin/sh
+
+# 删除容器
+docker rm [containID]
+
+# 删除所有停止的容器
+docker container prune
+
+# 停止容器
+docker stop [containerID]
+
+# 继续容器
+docker start [containerID]
+
+清理 - 查看 docker 占用空间
+docker system df
+
+# 清理 docker
+docker system prune -a --volumes
+
+# 删除退出的容器
+docker rm -f $(docker ps -aq)
+
 
 # Stop a running container through SIGTERM
 docker stop <container_id>
@@ -21,25 +92,16 @@ docker stop <container_id>
 # Stop a running container through SIGKILL
 docker kill <container_id>
 
-# List the networks
+# 查看网络
 docker network ls
 
-# container:查看所有正在运行的容器
-docker ps
-
-# Delete all running and stopped containers
-docker rm -f $(docker ps -aq)
-
-# Create a new bash process inside the container and connect it to the terminal
-docker exec -it <container_id> bash
-
-# Print the last lines of a container’s logs
+# 查看简化版日志
 docker logs --tail 100 <container_id> | less
 
-# Print the last lines of a container's logs and following its logs
+# 追踪日志
 docker logs --tail 100 <container_id> -f
 
-# Create new network
+# 创建网络
 docker network create <network_name>
 
 # 清理 docker - 会删除正在运行的容器
@@ -52,23 +114,14 @@ $ container_id: docker ps --- --headers 1 --column 1
 
 % docker-compose
 
-# Builds, (re)creates, starts, and attaches to containers for all services
-docker-compose up
-
-# Builds, (re)creates, starts, and dettaches to containers for all services
+# 后台启动所有
 docker-compose up -d
 
-# Builds, (re)creates, starts, and attaches to containers for a service
+# 后台启动所有并命名
 docker-compose up -d <service_name>
 
-# Builds, (re)creates, starts, and dettaches to containers for a service
-docker-compose up -d <service_name>
-
-# Print the last lines of a service’s logs
+# 打印最后 100 行日志
 docker-compose logs --tail 100 <service_name> | less
-
-# Print the last lines of a service's logs and following its logs
-docker-compose logs -f --tail 100 <service_name>
 
 # 停止所有容器
 docker-compose down
