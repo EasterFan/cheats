@@ -110,7 +110,8 @@ docker system prune -a --volumes
 $ image_id: docker images --- --headers 1 --column 3
 $ container_id: docker ps --- --headers 1 --column 1
 
-
+# 启动 nginx 容器
+docker run --name mynginx1 -p 80:80 -d nginx
 
 % docker-compose
 
