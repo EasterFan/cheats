@@ -45,8 +45,8 @@ docker  load -i easter-start-mysql.tar
 
 # 上传镜像到 dockerhub(不推荐)
 docker login &&
-docker tag easter-start-mysql:5.7 easterfan/puti &&
-docker push easterfan/puti:latest
+docker tag easter-start-mysql easterfan/puti &&
+docker push easterfan/puti
 
 # 启动容器
 docker run -d --name=test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -e MYSQL_DATABASE=halo mysql:5.7

@@ -17,3 +17,7 @@ navi --print
 
 ## 生成 ssh-keygen
 ssh-keygen -t rsa -C "xxxx@gmail.com" -f ~/.ssh/test_github
+
+
+## 删除 navicat data modeler 14天试用期
+sudo rm -Rf ~/Library/Application Support/PremiumSoft CyberTech
