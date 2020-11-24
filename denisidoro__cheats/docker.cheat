@@ -113,6 +113,11 @@ $ container_id: docker ps --- --headers 1 --column 1
 # 启动 nginx 容器
 docker run --name mynginx1 -p 80:80 -d nginx
 
+# nginx 容器挂载外部 html 文件
+docker pull nginx:alpine &&
+docker run -d --name mynginx2 -v $(pwd):/usr/share/nginx/html -p 80:80 nginx
+
+
 % docker-compose
 
 # 后台启动所有
