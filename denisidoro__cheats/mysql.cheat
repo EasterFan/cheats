@@ -1,10 +1,25 @@
 % mysql, database, db
 
-# Create database
-mysql -u <user> -p -e "create database <database> character set UTF8mb4 collate utf8mb4_bin"
+# 登陆 mysql
+mysql -u root -p
 
-# Export databse
-mysqldump -u <user> -p <database> > <path>
+# 查看数据库基本信息
+status;
 
-# Import database
-mysql -u <user> -p <database> <path>
+# 查看所有数据库
+show databases;
+
+# 使用某个数据库
+use <database_name>;
+
+# 查看数据库中所有数据表
+show tables;
+
+# 创建数据库
+mysql -u <user> -p -e "create database <database> character set UTF8mb4 collate utf8mb4_unicode_ci"
+
+# 查看 mysql 实例下所有的字符集
+show variables like 'character_set%';
+
+# 查看创建数据库时的字符集和排序规则
+show create database <database_name>;
