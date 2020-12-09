@@ -28,3 +28,6 @@ sudo lsof -iTCP -sTCP:LISTEN -n -P
 
 # mac 查看端口8080
 lsof -i tcp:8080
+
+# ssh 指定秘钥连接远程服务器
+ssh -i ~/.ssh/DO_Work root@138.197.212.71
