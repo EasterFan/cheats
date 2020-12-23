@@ -1,0 +1,8 @@
+% redis
+
+# 查看 key 值有效时间多长
+ttl [key]
+
+# 更改记录有效时间 - 设置有效时间为7000
+expire [key] [7000]
+git config --global user.email easterfan@gmail.com

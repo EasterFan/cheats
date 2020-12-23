@@ -17,3 +17,6 @@ cd {repo}/.git
 && git config user.name "EasterFan"
 && git config user.email "xxxx@gmail.com"
 && cat config
+
+# gitignore 缓存
+git rm -r --cached . && git add .
