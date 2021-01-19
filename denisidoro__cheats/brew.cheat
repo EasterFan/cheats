@@ -48,3 +48,6 @@ brew update
 
 # 升级所有软件
 brew upgrade <package_name> # 更新用brew安装的软件
+
+# mac 查看本机 IP
+ifconfig | grep "inet"
