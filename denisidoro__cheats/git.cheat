@@ -20,3 +20,6 @@ cd {repo}/.git
 
 # gitignore 缓存
 git rm -r --cached . && git add .
+
+# git 拉取最近一次提交 - 仓库太大
+git clone --branch master --depth=1 https://github/project/repo.git
