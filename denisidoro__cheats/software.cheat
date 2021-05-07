@@ -8,7 +8,7 @@ cd /Users/easter/Library/Application\Support/navi/cheats
 navi repo browse
 
 # 添加任何一个脚本仓库到 navi
-navi repo add https://github.com/denisidoro/cheats
+navi repo add https://github.com/EasterFan/navi-cheats
 
 # 不执行，只打印到控制台
 navi --print
