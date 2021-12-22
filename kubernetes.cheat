@@ -1,8 +1,28 @@
 % kubernetes, k8s
 
-# Print all contexts
-kubectl config get-contexts
+# 查看所有 node (wide, yaml, json)
+kubectl get node -o wide 
 
+# 查看 node 详细信息
+kubectl describe node <nodeName>
+
+# 查看所有 node 的 lable
+kubectl get node --show-labels
+
+# 给特定的 node 添加标签
+kubectl label node master1 env=test
+
+# 给特定的 node 设置 role
+kubectl label node master1 node-role.kubernetes.io/worker=
+
+# 删除某个 node 的 label
+kubectl label node master1 env-
+
+# 查看命名空间
+kubectl get namespace
+
+# 创建命名空间
+kubectl create namespace <easter>
 
 # 查看所有的 node, 按照规则过滤 (add option '-o wide' for details)
  kubectl get pods -A | grep -v Running
@@ -14,6 +34,9 @@ kubectl get namespaces
 kubectl get cm coredns -n kube-system -o yaml | grep manage
 
 watch "kubectl get pods -A | grep -v Running | grep -v Completed"
+
+# Print all contexts
+kubectl config get-contexts
 
 # Get pods from namespace (add option '-o wide' for details)
 kubectl get pods -n <namespace>
@@ -60,8 +83,3 @@ kubectl cordon <name>
 # Display resource (cpu/memory/storage) usage
 kubectl top <type>
 
-
- 10.254.205.246 manage.paas.cnstackops-inc.com
- 10.254.138.59  asc.paas.cnstackops.com
- 10.254.138.59  cs.console.paas.cnstackops.com
- 10.254.138.59 harbor.myk8s.paas.cnstackops-inc.com
