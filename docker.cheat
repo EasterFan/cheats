@@ -31,13 +31,19 @@ docker rmi ee7cbd482336
 # 删除【删除所有不使用的镜像】
 docker image prune -f -a
 
+# 删除所有 none 镜像
+docker rmi `docker images | grep  "<none>" | awk '{print $3}'`
+
 # dockerfile 创建镜像
 docker build -t jpressfdf:latest .
+
+# M1 docker 构建镜像
+docker buildx build -t $harbor/$namespace/$image --platform linux/amd64 -o type=docker .
 
 # 基于container 创建镜像（不推荐，看不到构建过程，不安全）
 docker commit [container_name] [new image_name]
 
-# 导出镜像
+# 导出镜像 - 用于内网镜像传输
 docker save -o easter-start-mysql.tar  easter-start-mysql:5.7
 
 # 加载镜像

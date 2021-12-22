@@ -3,20 +3,17 @@
 # Print all contexts
 kubectl config get-contexts
 
-# Print current context of kubeconfig
-kubectl config current-context
 
-# Set context of kubeconfig
-kubectl config use-context <context>
+# 查看所有的 node, 按照规则过滤 (add option '-o wide' for details)
+ kubectl get pods -A | grep -v Running
 
-# Print resource documentation
-kubectl explain <resource>
-
-# Get nodes (add option '-o wide' for details)
-kubectl get nodes
-
-# Get namespaces
+# 查看所有命名空间
 kubectl get namespaces
+
+# 获取 config-map 中的IP地址
+kubectl get cm coredns -n kube-system -o yaml | grep manage
+
+watch "kubectl get pods -A | grep -v Running | grep -v Completed"
 
 # Get pods from namespace (add option '-o wide' for details)
 kubectl get pods -n <namespace>
@@ -26,6 +23,18 @@ kubectl get pods --all-namespaces
 
 # Get services from namespace
 kubectl get services -n <namespace>
+
+# 查看所有 ingress
+kubectl get ingress -A
+
+# Print current context of kubeconfig
+kubectl config current-context
+
+# Set context of kubeconfig
+kubectl config use-context <context>
+
+# Print resource documentation
+kubectl explain <resource>
 
 # Get details from resource on namespace
 kubectl describe <resource>/<name> -n <namespace>
@@ -50,3 +59,9 @@ kubectl cordon <name>
 
 # Display resource (cpu/memory/storage) usage
 kubectl top <type>
+
+
+ 10.254.205.246 manage.paas.cnstackops-inc.com
+ 10.254.138.59  asc.paas.cnstackops.com
+ 10.254.138.59  cs.console.paas.cnstackops.com
+ 10.254.138.59 harbor.myk8s.paas.cnstackops-inc.com

@@ -21,6 +21,9 @@ npm install <package_name> --save-dev
 # install globally a specified package
 npm install <package_name> -g
 
+% yarn
+# npm 安装 yarn
+npm install --global yarn
 
 
 % nvm
