@@ -1,0 +1,4 @@
+% cnstack
+
+# 查看域名
+kubectl get cm coredns -n kube-system -o yaml | grep manage
