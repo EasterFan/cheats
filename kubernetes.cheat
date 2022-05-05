@@ -33,6 +33,7 @@ kubectl get namespaces
 # 获取 config-map 中的IP地址
 kubectl get cm coredns -n kube-system -o yaml | grep manage
 
+# 查看unready 的pod
 watch "kubectl get pods -A | grep -v Running | grep -v Completed"
 
 # Print all contexts
