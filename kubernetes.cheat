@@ -78,9 +78,14 @@ kubectl drain <name>
 # Mark node as schedulable
 kubectl uncordon <name>
 
-# Mark node as unschedulable
+# node 不可调度
 kubectl cordon <name>
 
 # Display resource (cpu/memory/storage) usage
 kubectl top <type>
+
+# 鉴权
+# 创建 clusterRole
+kubectl create clusterrole <clusterrole_name> --verb=get,list --resource=Deployment,daemonset
+
 

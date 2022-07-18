@@ -1,0 +1,8 @@
+% ansible
+
+# 创建目标目录
+ansible all -m shell -a "mkdir -p /work/ansible"
+# 将脚本拷贝到相应目录
+ansible all -m copy -a "src=/etc/ansible/bashshell.sh dest=/work/ansible/bashshell.sh mode=0755"
+# ansible 运行命令
+ansible all -m shell -a /etc/ansible/bashshell.sh 

@@ -2,3 +2,15 @@
 
 # 查看域名
 kubectl get cm coredns -n kube-system -o yaml | grep manage
+
+# 关闭开启 tianji 运维页面（给运维人员看的，存在安全隐患）
+sudo tjc stop tianji.TianjiPortal# 
+
+# 获取不正常的 appset
+kubectl get appset -A | grep -vw Ready
+
+# 集群机器IP 和 name，写入 hosts + 删除行首 + 写入 hosts
+kubectl get node -A -o wide|  awk '{print $6,$1}' |awk 'NR>2{print line}{line=$0} END{print line}' >> /etc/hosts
+
+# docker login
+docker login harbor.myk8s.ops.shecltd.com --username=admin --password=Harbor12345@ali
