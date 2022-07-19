@@ -14,3 +14,9 @@ kubectl get node -A -o wide|  awk '{print $6,$1}' |awk 'NR>2{print line}{line=$0
 
 # docker login
 docker login harbor.myk8s.ops.shecltd.com --username=admin --password=Harbor12345@ali
+
+# 解压
+7za x Agility-CNStack-v1.1.0r.7z -o/paas/ 
+
+# 拷包
+wget "http://" -O Agility.7z
