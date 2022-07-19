@@ -1,0 +1,17 @@
+% screen
+# 新建 screen，退出 ctrl A +  D
+screen -S copyPak
+
+# 查看 screen
+screen -ls
+
+# 恢复 screen
+screen -R <pid_name>
+
+
+% network
+# 查看丢包路由节点
+sudo mtr -n 121.41.179.24  -P 3130
+
+# eip 地址
+curl cip.cc
