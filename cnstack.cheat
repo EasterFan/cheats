@@ -20,3 +20,11 @@ docker login harbor.myk8s.ops.shecltd.com --username=admin --password=Harbor1234
 
 # 拷包
 wget "http://" -O Agility.7z
+
+
+# 获取 zone
+cat  /apsarapangu/disk3/u_disk/_tianji_imports/projects/tianji/clusters/tianji-lite-A-0003/tag.conf
+
+
+# harbor 密码
+kubectl get secret -n acs-harbor | grep core
