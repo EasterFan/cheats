@@ -19,10 +19,14 @@ curl cip.cc
 # 查看 traceroute
 traceroute -n -p 22 101.200.123.185
 
-
-
 # 解压缩
 tar zxvf filename.tar.gz
 
 # 文件夹压缩成包
 tar zcvf newNale.tar.gz folderName
+
+# base64 解码
+echo "V2VsY29tZSB0byBMaW51eAo=" | base64 --decode 
+
+# base64 编码
+echo "hello" | base64
