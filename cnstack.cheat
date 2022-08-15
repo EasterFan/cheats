@@ -28,3 +28,7 @@ cat  /apsarapangu/disk3/u_disk/_tianji_imports/projects/tianji/clusters/tianji-l
 
 # harbor 密码
 kubectl get secret -n acs-harbor | grep core
+
+
+# 查看 rota 值是不是为0
+ansible 666 -a "lsblk -o name,size,rota"

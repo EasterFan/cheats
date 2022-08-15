@@ -84,6 +84,9 @@ kubectl cordon <name>
 # Display resource (cpu/memory/storage) usage
 kubectl top <type>
 
+# 复制：宿主机到pod
+kubectl cp <localfile> <namespace>/<pod_name>:<pod_url>
+
 # 鉴权
 # 创建 clusterRole
 kubectl create clusterrole <clusterrole_name> --verb=get,list --resource=Deployment,daemonset
