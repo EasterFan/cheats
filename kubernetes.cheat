@@ -92,3 +92,5 @@ kubectl cp <localfile> <namespace>/<pod_name>:<pod_url>
 kubectl create clusterrole <clusterrole_name> --verb=get,list --resource=Deployment,daemonset
 
 
+# pod 内安装 curl, 前者Ubuntu，后者
+apk-add curl  / apt-get install alpine

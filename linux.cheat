@@ -34,5 +34,5 @@ echo "hello" | base64
 # 设置 hostname
 hostnamectl set-hostname  worker4
 
-# 免密
+# 免密，让本机器免密登录192.168
 ssh-copy-id -i id_rsa.pub root@192.168.88.53
