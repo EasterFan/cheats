@@ -87,6 +87,9 @@ kubectl top <type>
 # 复制：宿主机到pod
 kubectl cp <localfile> <namespace>/<pod_name>:<pod_url>
 
+# 复制：pod 到 宿主机
+kubectl cp <some-namespace>/<some-pod>:/tmp/foo /tmp/bar
+
 # 鉴权
 # 创建 clusterRole
 kubectl create clusterrole <clusterrole_name> --verb=get,list --resource=Deployment,daemonset
