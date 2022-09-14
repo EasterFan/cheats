@@ -2,7 +2,7 @@
 
 ## navi 配置
 # navi 安装路径
-cd /Users/easter/Library/Application\Support/navi/cheats
+cd /Users/${USER}/Library/Application\ Support/navi/cheats
 
 # 浏览作者写的脚本
 navi repo browse
@@ -24,4 +24,4 @@ sudo rm -Rf ~/Library/Application Support/PremiumSoft CyberTech
 
 
 # kanbie 地址  -用于备份 - lost 目录下
-cd /Users/faneaster/Library/Application\ Support/Google/Chrome/Default/Extensions/hancagoabobbbadijbbfepodbdgjbfpf
+cd /Users/${USER}/Library/Application\ Support/Google/Chrome/Default/Extensions/hancagoabobbbadijbbfepodbdgjbfpf
