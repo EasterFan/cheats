@@ -3,6 +3,9 @@
 # 查看所有 node (wide, yaml, json)
 kubectl get node -o wide 
 
+# 强制删除 pod
+kubectl delete pod <pod_name> -n <ns> --force --grace-period=0
+
 # 查看 node 详细信息
 kubectl describe node <nodeName>
 
