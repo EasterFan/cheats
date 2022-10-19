@@ -25,3 +25,6 @@ sudo rm -Rf ~/Library/Application Support/PremiumSoft CyberTech
 
 # kanbie 地址  -用于备份 - lost 目录下
 cd /Users/${USER}/Library/Application\ Support/Google/Chrome/Default/Extensions/hancagoabobbbadijbbfepodbdgjbfpf
+
+# shell 复制
+git pull -b main https://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:x-oauth-basic@github.com/easterfan/shells.git
